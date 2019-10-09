@@ -1,0 +1,42 @@
+package lab1;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Chapter {
+	private String nameC;
+	
+
+	
+	public Chapter() {
+		
+	}
+	
+	private List<SubChapter> subchapterList = new ArrayList<SubChapter>() ; 
+
+	@Override
+	public String toString() {
+		return "Chapter [nameC=" + nameC + "]";
+	}
+
+	public String getNameC() {
+		return nameC;
+	}
+
+	public void setNameC(String nameC) {
+		this.nameC = nameC;
+	}
+
+	public Chapter(String nameC) {
+		super();
+		this.nameC = nameC;
+	}
+	public int createsubchapterList(String nameSC) {
+		SubChapter chp1 = new SubChapter(nameSC);
+		subchapterList.add(chp1);
+		return subchapterList.indexOf(chp1);
+	}
+	
+
+
+}
