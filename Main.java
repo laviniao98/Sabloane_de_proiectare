@@ -37,26 +37,25 @@ public class Main {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-	Book aaa =new Book("aaa")	;
+	Book book =new Book("aaa")	;
 	Author bbb= new Author("bbb");
-	 aaa.addAuthor(bbb);
-	int indexOfChapter = aaa.createChapter("ChapterOne");
-	Chapter chpOne =aaa.getChapter(indexOfChapter);
+	 book.addAuthor(bbb);
+	int indexOfChapter = book.createChapter("ChapterOne");
+	Chapter chpOne =book.getChapter(indexOfChapter);
 	int indexOfSubChapter =chpOne.createsubchapterList("Chapter One one");
 	SubChapter chpOneOne =chpOne.getSubChapter(indexOfSubChapter);
 	int indexOfParagraph= chpOneOne.createparagraphList("pr");
 	int indexOfImage= chpOneOne.createimageList("im");
+	int indexOfParagraph2= chpOneOne.createparagraphList("pr2");
 	int indexOfTable= chpOneOne.createtableList("tb");
+	int indexOfParagraph3= chpOneOne.createparagraphList("pr3");
+	int indexOfImage2= chpOneOne.createimageList("im2");
 	
-	bbb.print();
-	System.out.print(aaa);
+	book.print();
+	
 	
 	}
 
-	private static void print() {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
 

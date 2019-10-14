@@ -47,9 +47,8 @@ public class Book {
 	 {
 
 	   System.out.println("Book: " + name);
-	   author.print();
-	   for (Chapter chapter : chapterList) {
-	      chapter.print();
+	   for (Chapter c : chapterList) {
+	      c.print();
 	   }
 
 	  }

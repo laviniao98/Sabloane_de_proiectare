@@ -1,6 +1,6 @@
 
 
-public class Paragraph {
+public class Paragraph extends Element {
 	private String nameP;
 	
 	public Paragraph() {
@@ -24,6 +24,9 @@ public class Paragraph {
 		super();
 		this.nameP = nameP;
 	}
+	public void print() {
+		    System.out.println("Paragraph: " + nameP);
+		  }
 
 }
 

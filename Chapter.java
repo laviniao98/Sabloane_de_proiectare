@@ -61,16 +61,11 @@ public class Chapter {
 
 	 for (SubChapter subChapter : subchapterList) {
 
-	     ((Chapter) subchapterList).print();
+	     subChapter.print();
 
 	    }
 
 	  }
-
-	public void print1() {
-		// TODO Auto-generated method stub
-		
-	}
 	
 
 

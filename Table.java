@@ -1,6 +1,6 @@
 
 
-public class Table {
+public class Table extends Element{
 	private String nameT;
 	
 	public Table() {
@@ -23,6 +23,11 @@ public class Table {
 	public Table(String nameT) {
 		super();
 		this.nameT = nameT;
+	}
+	
+	public void print() 
+	{
+	    System.out.println("Table: " + nameT);
 	}
 
 }

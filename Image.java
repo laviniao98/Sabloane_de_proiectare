@@ -1,6 +1,6 @@
 
 
-public class Image {
+public class Image extends Element {
 	private String nameI;
 	@Override
 	public String toString() {
@@ -22,7 +22,7 @@ public class Image {
 
 	public void print() 
 	{
-	    System.out.println(nameI);
+	    System.out.println("Image: " + nameI);
 	}
 
 }
