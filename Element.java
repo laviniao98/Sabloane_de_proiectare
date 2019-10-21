@@ -1,6 +1,9 @@
+package lab4SP;
 
-public abstract class Element {
-	public abstract void print();
-		
+public interface Element {
+
+
+
+	  public void print();
 
 }
