@@ -1,4 +1,7 @@
 package lab4SP;
+
+import java.util.concurrent.TimeUnit;
+
 public class Image implements Element {
 
 	private String nameI;
@@ -25,9 +28,19 @@ public class Image implements Element {
 
 	public Image(String nameI) {
 
-		super();
 
 		this.nameI = nameI;
+		String imageName= nameI;
+		try {
+			TimeUnit.SECONDS.sleep(5);
+			
+			
+		}
+		catch(InterruptedException e){
+			e.printStackTrace();
+			
+		}
+		
 
 	}
 
