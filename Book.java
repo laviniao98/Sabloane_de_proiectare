@@ -79,6 +79,17 @@ public class Book implements Element {
 	    }
 		
 	  }
+	  
+
+	  public void accept(Visitor visitor) {
+
+	    for (Element element : content) {
+	      element.accept(visitor);
+	    }
+
+	    visitor.visit(this);
+
+	  }
 
 	
 
