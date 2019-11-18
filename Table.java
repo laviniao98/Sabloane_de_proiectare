@@ -50,6 +50,13 @@ public class Table implements Element{
 	    System.out.println("Table: " + nameT);
 
 	}
+	
+
+	  public void accept(Visitor visitor) {
+
+	    visitor.visit(this);
+
+	  }
 
 
 
