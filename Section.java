@@ -64,7 +64,13 @@ public class Section implements Element {
 	    }
 
 	  }
+	  
 
-
+	  public void accept(Visitor visitor) {
+	    visitor.visit(this);
+	    for (Element element : content) {
+	      element.accept(visitor);
+	    }
+	  }
 
 	}
