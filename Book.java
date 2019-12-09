@@ -73,12 +73,41 @@ public class Book implements Element {
 		}
 		
 	    for (Element element : content) {
-
 	      element.print();
-
 	    }
 		
 	  }
+	  
+
+	  public void accept(Visitor visitor) {
+
+	    for (Element element : content) {
+	      element.accept(visitor);
+	    }
+
+	    visitor.visit(this);
+
+	  }
+
+	public void add(Element element) {
+		// TODO Auto-generated method stub
+		this.content.add(element);
+		
+	}
+
+	@Override
+	public void setNewValue(String newValue) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public  Book copy() {
+		// TODO Auto-generated method stub
+		return new Book (this.name);
+	}
+	  
+
 
 	
 

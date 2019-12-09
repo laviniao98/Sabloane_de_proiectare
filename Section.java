@@ -7,35 +7,34 @@ import java.util.List;
 public class Section implements Element {
 
 	  private String title;
+	  private String sectionTitle;
+	  private String oldValue;
+	  private ArrayList <Observer> obList= new ArrayList<Observer>(); 
+	  
 
 	  private List<Element> content = new ArrayList<Element>();
-
+	private ArrayList<Element> listaElemente = new ArrayList<Element>();
 
 	  public String getName() {
-
 	    return title;
 
 	  }
 
 	  public void setName(String name) {
-
 	    this.title = name;
-
 	  }
 
 
 
 	  public Section(String name) {
-
 	    this.title = name;
+        this.obList.add(DocumentManager.getInstance().getFirstObserver());
 
 	  }
 
 
 	  public void add(Element element) {
-
 	    this.content.add(element);
-
 	  }
 
 
@@ -64,7 +63,64 @@ public class Section implements Element {
 	    }
 
 	  }
+	  
 
+	  public void accept(Visitor visitor) {
+	    visitor.visit(this);
+	    for (Element element : content) {
+	      element.accept(visitor);
+	    }
+	  }
+	  
+	  public void setNewValue(String newValue) {
+		  this.oldValue = this.sectionTitle;
+		  this.sectionTitle = newValue;
+		  this.notifyObservers();
+		  
+	  }
+	  public void addObserver(Observer ob) {
+		  this.obList.add(ob);
+		  
+	  }
+	  public void removeObserver(Observer ob) {
+		  int indexObs = this.obList.indexOf(ob);
+		  this.obList.remove(indexObs);
+		  
+	  }
+	  public void notifyObservers() {
+		  for (Observer obs : obList)
+		  {
+			  obs.update(this.oldValue, this.sectionTitle);
+		  }
+		  
+	  }
+	  
+	  
+		public Element getLastElement()
+		{
+			if(this.listaElemente.size() > 0)
+			{
+				return this.listaElemente.get(this.listaElemente.size() -1 );
+			}
+			else
+			{
+				return null;
+			}
 
+		}
+		
+		
+
+		@Override
+
+		public Element copy() {
+			// TODO Auto-generated method stub
+			Section s = new Section(this.title);
+			 this.listaElemente.forEach(p -> {
+				 s.add(p.copy());
+			 });
+			return s;
+
+		}
 
 	}
